@@ -24,3 +24,5 @@ emmax-GWAS
     -S [int] : set random seed 随机数
     -m [float] : MAF threshold (default is 0)  maf
     -c [float] : Call rate threshold (default is 0)
+
+4. admixture计算群体遗传结构作为协变量
