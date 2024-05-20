@@ -15,7 +15,7 @@ for line in vcf:
 vcf.close()
 
 out.write("<Covariate>" + '\n')
-out.write("<Individuals>" + '\t' + 'Q1' + '\t' + 'Q2' + '\n')  # 这里已经删除Q3
+out.write("<Individuals>" + '\t' + 'Q1' + '\t' + 'Q2' + '\n')  # 这里已经删除Q3，实际运行时根据k数减1修改Q1，2，3...
 
 for s, v in enumerate(file):
     _v = v.rstrip().split(' ')
