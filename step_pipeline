@@ -81,7 +81,8 @@ GWAS结果文件：test.qk.ps文件，第一列ID，第二列回归系数(beta),
 结果文件整理为pmap格式，第一列为ID，第二列为chr，第三列position，第四列为p值
 
 8. 计算变异位点贡献率PVE
-公式：![image](https://github.com/LiuBinhahaha/Figs/blob/main/GWAS/maf.png)
+公式：
+![image](https://github.com/LiuBinhahaha/Figs/blob/main/GWAS/maf.png)
 
 9. 提取显著性结果
 
