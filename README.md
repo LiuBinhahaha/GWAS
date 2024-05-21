@@ -24,3 +24,6 @@ emmax-GWAS
     -S [int] : set random seed 随机数
     -m [float] : MAF threshold (default is 0)  maf
     -c [float] : Call rate threshold (default is 0)
+
+## PVE计算公式
+![image](https://github.com/LiuBinhahaha/Figs/blob/main/BSR_pipeline/depth_desity.png)
