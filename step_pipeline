@@ -39,7 +39,7 @@ test_id.3.Q
 0.000010 0.747498 0.252492
 ...
 
-4.1 整理协方差文件. 前两列是跟表型/tfam一样的个体名字。 第三列都是 1 (截距). 从第四列开始群体结构 Q1,Q2 ...###删除Q文件最后一列###
+4.1 整理协变量文件. 第一列是FID，第二列是IID， 第三列都是 性别 (截距). 从第四列开始群体结构 Q1,Q2 ...###删除Q文件最后一列###
 
 5. 整理表型数据文件，前两列为样本名，第三列为性状数值，每个性状一个文件，整理后为这样，表型名字作为文件名：
 WGS0006	WGS0006	0.21
@@ -79,6 +79,27 @@ GWAS结果文件：test.qk.ps文件，第一列ID，第二列回归系数(beta),
 
 7. 结果展示（曼哈顿图与QQ-plot）
 结果文件整理为pmap格式，第一列为ID，第二列为chr，第三列position，第四列为p值
+test.pmap
+ID      chr     pos     p
+1_4594  1       4594    0.34624
+1_5146  1       5146    0.74646
+1_5148  1       5148    0.74128
+1_5178  1       5178    0.72868
+1_5197  1       5197    0.85218
+1_5203  1       5203    0.71379
+1_5214  1       5214    0.87221
+1_5228  1       5228    0.91102
+1_5737  1       5737    0.58844
+1_5754  1       5754    0.7754
+
+画图中的显著性阈值也可以使用GEC（GENETIC TYPE I ERROR CALCULATOR software）方法计算的阈值：
+java -jar '-Xmx10G' ~/software/GEC/kggsee.jar --var-gec --nt 12 --vcf-ref /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf.gz --out test
+--nt 线程数
+--vcf-ref  vcf/vcf.gz 变异文件
+输出日志显示 xxx variant-lines (0 indels) are scanned in /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf.gz; and n variants of 1844 individual(s) are retained(Me).
+此时的显著性阈值为：1/Me or 0.05/Me or 0.01/Me
+
+GEC-ref:https://pmg-lab-docs.readthedocs.io/en/latest/KGGSEE_doc/KGGSEE.html#gene-based-association-analysis
 
 8. 计算变异位点贡献率PVE
 
