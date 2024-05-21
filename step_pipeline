@@ -5,7 +5,7 @@ emmax-GWAS
 2. transfer format to p-file(tped, tmap, tfam...)
    plink --vcf test.vcf --recode 12 transpose --output-missing-genotype 0 --allow-extra-chr --out test 
 
-   emmax可接受plink长格式
+   emmax接受plink长格式
    基因型需要先 imputation（填充可以使用beagle），不能有缺失，缺失可用0代替（相当于用0填充 output-missing-genotype 0），且只识别双等位位点
    --output-missing-genotype 0  缺失基因型用0代替
    --transpose 转置
@@ -107,7 +107,7 @@ GEC-ref:https://pmg-lab-docs.readthedocs.io/en/latest/KGGSEE_doc/KGGSEE.html#gen
 8. 计算变异位点贡献率PVE
 
 9. 提取显著性结果及候选基因
-Methods：For clustered signiﬁcant signals, the signal with the highest log10(P-value) in the 110.90 kb region (corresponding to the LD decay distance) \
+Methods：For clustered signiﬁcant signals, the signal with the highest -log10(P-value) in the 110.90 kb region (corresponding to the LD decay distance) \
          were considered as the peak. Regions of 110.9 kb upstream and downstream of the peaks and harboring at least three clustered signiﬁcant loci, were deﬁned as QTL. \
          Genes that were mapped to LD regions with signiﬁcant signals in the QTLs were considered as candidate genes.
 LD衰减距离计算：PopLDdecay -InVCF /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf --OutStat /vol/liubin/data/60K_chip/rawdata/test_LD（ref：https://www.jianshu.com/p/50a9c66fbd2a）   或 LDBlockShow
