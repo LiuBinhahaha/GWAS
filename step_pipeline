@@ -97,7 +97,7 @@ java -jar '-Xmx10G' ~/software/GEC/kggsee.jar --var-gec --nt 12 --vcf-ref /vol/l
 --nt 线程数
 --vcf-ref  vcf/vcf.gz 变异文件
 输出日志显示 xxx variant-lines (0 indels) are scanned in /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf.gz; and n variants of 1844 individual(s) are retained(Me).
-此时的显著性阈值为：1/Me or 0.05/Me or 0.01/Me
+此时的显著性阈值为：1/Me(usually) or 0.05/Me or 0.01/Me
 
 GEC-ref:https://pmg-lab-docs.readthedocs.io/en/latest/KGGSEE_doc/KGGSEE.html#gene-based-association-analysis
 
