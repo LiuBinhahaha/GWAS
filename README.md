@@ -26,4 +26,4 @@ emmax-GWAS
     -c [float] : Call rate threshold (default is 0)
 
 ## PVE计算公式
-![image](https://github.com/LiuBinhahaha/Figs/blob/main/BSR_pipeline/depth_desity.png)
+![image](GWAS/maf.png)
