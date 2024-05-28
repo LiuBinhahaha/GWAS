@@ -68,9 +68,9 @@ WGS0059	WGS0059	0.19
 
 6. do-GWAS by Q+K/K
 Q+K：
-emmax-intel64 -t /vol/liubin/data/gwas/test -o test.qk -p /vol/liubin/data/gwas/traits/Anther_color_BeijingShunyi_2011.txt -k /vol/liubin/data/gwas/emmax_test_kin -c /vol/liubin/data/gwas/cov.3.Q.txt
+emmax-intel64 -t /vol/liubin/data/gwas/test -o test -p /vol/liubin/data/gwas/traits/Anther_color_BeijingShunyi_2011.txt -k /vol/liubin/data/gwas/emmax_test_kin -c /vol/liubin/data/gwas/cov.3.Q.txt
 -t 基因型文件
--o 输出结果前缀
+-o 输出结果前缀(输出结果未*.ps)
 -p 性状，一次一个性状
 -k 亲缘关系文件
 -c 协变量文件
