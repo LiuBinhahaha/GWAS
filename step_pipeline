@@ -78,7 +78,7 @@ emmax-intel64 -t /vol/liubin/data/gwas/test -o test -p /vol/liubin/data/gwas/tra
 只利用亲缘关系Kinship进行关联分析：
 emmax-intel64 -t /vol/liubin/data/gwas/test -o test.qk -p /vol/liubin/data/gwas/traits/Anther_color_BeijingShunyi_2011.txt -k /vol/liubin/data/gwas/emmax_test_kin
 
-GWAS结果文件：test.qk.ps文件，第一列ID，第二列回归系数(beta),第三列回归系数的标准差，第四列为P值。
+GWAS结果文件：test.ps文件，第一列ID，第二列回归系数(beta),第三列回归系数的标准差，第四列为P值。
 
 7. 结果展示（曼哈顿图与QQ-plot）
 结果文件整理为pmap格式，第一列为ID，第二列为chr，第三列position，第四列为p值
