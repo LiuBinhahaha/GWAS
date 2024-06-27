@@ -21,7 +21,7 @@ pmap <- read.table(input_file, header = T)
 
 
 # 阈值计算
-threshold <- 1/nrow(pmap[!is.na(pmap$pos),])
+threshold <- 0.05/0.01/nrow(pmap[!is.na(pmap$pos),])
 
 # 标注显著基因
 SNPs <- pmap[pmap[,4] < (0.000000001 / nrow(pmap)), 1]  # 测试数据添加显著性位点，无意义。实际做时仅添加目标显著位点
