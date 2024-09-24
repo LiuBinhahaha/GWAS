@@ -1,5 +1,6 @@
 # GWAS
 emmax-GWAS
+# ！！！ 分析时如果表型文件样本是基因型文件的一部分，必须要从大的vcf文件中提取所要分析的子集，并且最终运行时要基因型文件与表型文件的样本数一致，最好是文件名顺序也一致。
 1. vcf file add id
 
 2. transfer format to p-file(tped, tmap, tfam...)
