@@ -24,6 +24,7 @@ emmax-GWAS
     -S [int] : set random seed 随机数
     -m [float] : MAF threshold (default is 0)  maf
     -c [float] : Call rate threshold (default is 0)
+计算亲缘关系时，emmax要求vcf文件中染色体仅使用数字，而不能出现scaffold、Chr...
 
 4. 添加协变量文件
 4.1 admixture计算群体遗传结构作为协变量（使用github/60k_chip中admixture方法）
