@@ -1,9 +1,13 @@
 # GWAS
 # 第一步：对表型文件进行处理，获取最终样本的表型名和表型值（两列表型名，一列表型值）；
 # 第二步：利用bcftools从群体vcf文件中获取目的样本的vcf文件 bcftools view total.vcf.gz -S {}.sample > {}_sample.vcf
-# 第三步：过滤提取的vcf文件（maf missing het），如果vcf文件的染色体不是单独1，2，3...需要将scaffold_/Chr/chr替换掉，同时id也是仅为染色体数字；
-
-
+# 注意：基因型文件与表型文件的样本数和顺序都必须一致。
+# 第三步：过滤提取的vcf文件（maf missing het），如果vcf文件的染色体不是单独1，2，3...需要将scaffold_/Chr/chr替换掉，同时id也是仅为染色体数字，便于emmax亲缘关系矩阵计算；
+# 第四步：plink将vcf格式转换为tped、tmap...；
+# 第五步：emmax计算亲缘关系矩阵；
+# 第六步：emmax进行GWAS分析；
+# 第七步：将emmax输出的ps文件转化为pmap文件，利用CMplot画曼哈顿图和QQ-plot；
+# 第八步：获取peak site信息；
 
 
 
