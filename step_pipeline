@@ -1,4 +1,14 @@
 # GWAS
+# 第一步：对表型文件进行处理，获取最终样本的表型名和表型值（两列表型名，一列表型值）；
+# 第二步：利用bcftools从群体vcf文件中获取目的样本的vcf文件 bcftools view total.vcf.gz -S {}.sample > {}_sample.vcf
+# 第三步：过滤提取的vcf文件（maf missing het），如果vcf文件的染色体不是单独1，2，3...需要将scaffold_/Chr/chr替换掉，同时id也是仅为染色体数字；
+
+
+
+
+
+
+
 emmax-GWAS
 # ！！！ 分析时如果表型文件样本是基因型文件的一部分，必须要从大的vcf文件中提取所要分析的子集，并且最终运行时要基因型文件与表型文件的样本数一致，最好是文件名顺序也一致。
 1. vcf file add id
