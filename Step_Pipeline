@@ -1,5 +1,5 @@
-# GWAS
-# 第一步：对表型文件进行处理，获取最终样本的表型名和表型值（两列表型名，一列表型值）；
+# do GWAS
+# 第一步：对表型文件进行处理，获取最终样本的表型名和表型值（两列表型名，一列表型值），表型文件中样本顺序必须与基因型文件中样本顺序一致；
 # 第二步：利用bcftools从群体vcf文件中获取目的样本的vcf文件 bcftools view total.vcf.gz -S {}.sample > {}_sample.vcf
 # 注意：基因型文件与表型文件的样本数和顺序都必须一致。
 # 第三步：过滤提取的vcf文件（maf missing het），如果vcf文件的染色体不是单独1，2，3...需要将scaffold_/Chr/chr替换掉，同时id也是仅为染色体数字，便于emmax亲缘关系矩阵计算；
@@ -8,14 +8,10 @@
 # 第六步：emmax进行GWAS分析；
 # 第七步：将emmax输出的ps文件转化为pmap文件，利用CMplot画曼哈顿图和QQ-plot；
 # 第八步：获取peak site信息；
-
-
-
-
+# 第九步：计算每个位点的表型变异解释率(PVE)
 
 emmax-GWAS
-# ！！！ 分析时如果表型文件样本是基因型文件的一部分，必须要从大的vcf文件中提取所要分析的子集，并且最终运行时要基因型文件与表型文件的样本数一致，最好是文件名顺序也一致。
-1. vcf file add id
+1. deal phenotype for GWAS
 
 2. transfer format to p-file(tped, tmap, tfam...)
    plink --vcf test.vcf --recode 12 transpose --output-missing-genotype 0 --allow-extra-chr --out test 
@@ -54,8 +50,8 @@ test_id.3.Q
 0.000010 0.782040 0.217950
 0.000010 0.667174 0.332816
 0.000010 0.747498 0.252492
-...
-整理协变量文件. 第一列是FID，第二列是IID， 第三列都是 性别 (截距). 从第四列开始群体结构 Q1,Q2 ...###删除Q文件最后一列###
+...   ...   ... 
+整理协变量文件. 第一列是FID，第二列是IID， 第三列都是性别 (截距 1). 从第四列开始群体结构 Q1,Q2 ...###删除Q文件最后一列###
 
 4.2 GCTA主成分分析结果作为协变量
 同样与4.1类似，直接将最佳PCAs添加到cov.txt中（最佳PCA就是你的PCA数能将群体最佳分开），主成分分析具体方法见 Github/60k-chip/genetic_population
@@ -126,5 +122,13 @@ GEC-ref:https://pmg-lab-docs.readthedocs.io/en/latest/KGGSEE_doc/KGGSEE.html#gen
 Methods：For clustered signiﬁcant signals, the signal with the highest -log10(P-value) in the 110.90 kb region (corresponding to the LD decay distance) \
          were considered as the peak. Regions of 110.9 kb upstream and downstream of the peaks and harboring at least three clustered signiﬁcant loci, were deﬁned as QTL. \
          Genes that were mapped to LD regions with signiﬁcant signals in the QTLs were considered as candidate genes.
-LD衰减距离计算：PopLDdecay -InVCF /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf --OutStat /vol/liubin/data/60K_chip/rawdata/test_LD（ref：https://www.jianshu.com/p/50a9c66fbd2a）   或 LDBlockShow
+LD衰减距离计算：PopLDdecay -InVCF /vol/liubin/data/60K_chip/rawdata/NG_paper_all0.05_0.1.vcf --OutStat /vol/liubin/data/60K_chip/rawdata/test_LD（ref：https://www.jianshu.com/p/50a9c66fbd2a）
+               或 LDBlockShow
+
+
+
+
+
+
+
 
